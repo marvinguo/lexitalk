@@ -105,6 +105,7 @@ Word entries are located in `src/content/docs/words/` as MDX files. Each file fo
 - **Linting**: Code formatting is handled by Prettier (see `.prettierrc`)
 - **Before Committing**: Ensure code builds successfully with `pnpm build`
 - **Testing Changes**: Always test in dev mode and preview production build
+- **Comments**: All code comments MUST be written in English for consistency and international collaboration
 
 ## Additional Resources
 
