@@ -11,7 +11,8 @@
   --sl-text-lg: 1rem;
   --sl-color-accent: #2c3e50 !important;
   --sl-color-text-accent: #2196f3 !important;
-  --sl-color-link-accent: #2edfa3;
+  --sl-color-link-accent: #2196f3;: #2edfa3;
+  --sl-color-link-hover-accent: #2edfa3;
   --sl-color-brand: #2196f3 !important;
 }
 
@@ -60,6 +61,10 @@ html[data-theme='dark'] .primary {
 
 .sl-markdown-content a:not(:where(.not-content *)) {
 	color: var(--sl-color-link-accent);
+}
+
+.sl-markdown-content a:not(.not-content a):hover {
+    color: var(--sl-color-link-hover-accent);
 }
 
 .sl-link-button {
