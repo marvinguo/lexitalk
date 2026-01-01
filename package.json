@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "bash deploy.sh",
-    "cf-build": "pnpm install --no-frozen-lockfile && astro check && astro build"
+    "cf-build": "pnpm install --no-frozen-lockfile && astro check && astro build",
+    "normalize-headings": "node scripts/normalize-headings.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
