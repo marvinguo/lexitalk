@@ -19,22 +19,27 @@ hero:
 ---
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
+import AlphabetIndex from "../../components/AlphabetIndex.astro";
 
-<section style="width: 100%; text-align: center; margin: 3rem auto 4rem;">
+<section class="hero-section" style="width: 100%; text-align: center; margin: 4rem auto 6rem;">
   <div style="max-width: 900px; margin: 0 auto; padding: 0 1.5rem;">
-    <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.3; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+    <h2 class="hero-title">
       深度挖掘英语词汇魅力的学习平台
     </h2>
-    <p style="font-size: clamp(1rem, 2.5vw, 1.25rem); line-height: 1.8; color: var(--sl-color-gray-2); max-width: 760px; margin: 0 auto 2rem;">
+    <p style="font-size: clamp(1.1rem, 2.5vw, 1.4rem); line-height: 1.6; color: var(--sl-color-gray-3); max-width: 700px; margin: 0 auto 3rem; font-weight: 400; letter-spacing: -0.01em;">
       涵盖{" "}
-      <strong style="color: var(--sl-color-text-accent); font-size: 1.4em;">
+      <strong style="color: var(--sl-color-text-accent); font-weight: 600;">
         8000+
       </strong>{" "}
-      精选核心词汇，每个单词都经过 GPT-4
-      深度解析，结合词根词缀、文化背景、助记技巧，构建系统化的词汇学习体系
+      精选核心词汇，结合 AI 深度解析、词根词缀与文化背景，构建系统化的逻辑记忆体系。
     </p>
   </div>
 </section>
+
+<div class="index-container" style="margin-bottom: 6rem;">
+  <h3 style="text-align: center; margin-bottom: 2rem; border: none; font-size: 1.5rem; color: var(--sl-color-gray-2);">快速开始：按首字母索引</h3>
+  <AlphabetIndex />
+</div>
 
 <CardGrid stagger>
   <Card title="🤖 AI 智能驱动" icon="rocket">
@@ -64,52 +69,40 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
   </Card>
 </CardGrid>
 
-<section style="width: 100%; text-align: center; margin: 4rem auto 2rem; padding: 3rem 1.5rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 1rem;">
-  <h3 style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1rem; color: var(--sl-color-white);">
-    适合谁使用？
+<section class="audience-section">
+  <h3 style="font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 700; margin-bottom: 3rem; border: none; color: var(--sl-color-white);">
+    为进阶英语学习者打造
   </h3>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 2rem auto 0; text-align: left;">
-    <div style="padding: 1.25rem;margin-top: 0;background: var(--sl-color-bg-nav); border-radius: 0.75rem; border: 1px solid var(--sl-color-hairline-light);">
-      <strong style="display: block; margin-bottom: 0.5rem; color: var(--sl-color-white);">
-        🎓 考试备考者
-      </strong>
-      <span style="font-size: 0.9rem; color: var(--sl-color-gray-3);">
-        考研、托福、雅思、GRE
-      </span>
-    </div>
-    <div style="padding: 1.25rem;margin-top: 0; background: var(--sl-color-bg-nav); border-radius: 0.75rem; border: 1px solid var(--sl-color-hairline-light);">
-      <strong style="display: block; margin-bottom: 0.5rem; color: var(--sl-color-white);">
-        💼 职场人士
-      </strong>
-      <span style="font-size: 0.9rem; color: var(--sl-color-gray-3);">
-        提升专业英语和职场应用能力
-      </span>
-    </div>
-    <div style="padding: 1.25rem;margin-top: 0; background: var(--sl-color-bg-nav); border-radius: 0.75rem; border: 1px solid var(--sl-color-hairline-light);">
-      <strong style="display: block; margin-bottom: 0.5rem; color: var(--sl-color-white);">
-        🌟 英语爱好者
-      </strong>
-      <span style="font-size: 0.9rem; color: var(--sl-color-gray-3);">
-        深度学习语言文化内涵
-      </span>
-    </div>
-    <div style="padding: 1.25rem;margin-top: 0; background: var(--sl-color-bg-nav); border-radius: 0.75rem; border: 1px solid var(--sl-color-hairline-light);">
-      <strong style="display: block; margin-bottom: 0.5rem; color: var(--sl-color-white);">
-        👨‍🏫 教育工作者
-      </strong>
-      <span style="font-size: 0.9rem; color: var(--sl-color-gray-3);">
-        获取优质的教学资源和素材
-      </span>
-    </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; text-align: left;">
+    {[
+      { title: "🎓 考试备考者", desc: "考研、托福、雅思、GRE" },
+      { title: "💼 职场人士", desc: "提升专业英语和职场应用能力" },
+      { title: "🌟 英语爱好者", desc: "深度学习语言文化内涵" },
+      { title: "👨‍🏫 教育工作者", desc: "获取优质的教学资源和素材" }
+    ].map(item => (
+      <div class="audience-card">
+        <strong style="display: block; margin-bottom: 0.75rem; color: var(--sl-color-accent); font-size: 1.25rem;">
+          {item.title}
+        </strong>
+        <span style="font-size: 1rem; color: var(--sl-color-gray-3); line-height: 1.5;">
+          {item.desc}
+        </span>
+      </div>
+    ))}
   </div>
 </section>
 
-<section style="width: 100%; text-align: center; margin: 3rem auto 2rem;">
-  <p style="font-size: 1.1rem; color: var(--sl-color-gray-2); line-height: 1.8;">
-    🚀 <strong style="color: var(--sl-color-text-accent);">现代化技术栈</strong>
+<section style="width: 100%; text-align: center; margin: 4rem auto 4rem;">
+  <p style="font-size: 1.2rem; color: var(--sl-color-gray-2); line-height: 1.8; letter-spacing: -0.01em;">
+    🚀 <strong style="color: var(--sl-color-text-accent); font-weight: 600;">现代化技术栈</strong>
     ：基于 Astro + Starlight + Svelte + TailwindCSS 构建
   </p>
-  <p style="font-size: 1rem; color: var(--sl-color-gray-3); margin-top: 1rem;">
-    开源免费 · SEO 友好 · 响应式设计 · 高性能体验
-  </p>
+  <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap;">
+    {["开源免费", "SEO 友好", "响应式设计", "高性能体验"].map(tag => (
+      <span class="tech-tag">
+        {tag}
+      </span>
+    ))}
+  </div>
 </section>
+

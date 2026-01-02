@@ -126,17 +126,24 @@ svg {
 }
 
 /* Header 优化 - 极致毛玻璃效果与 Apple 审美 */
-.header {
-  backdrop-filter: blur(20px) saturate(180%);
-  background: rgba(255, 255, 255, 0.72) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 0 1.5rem;
-  transition: all 0.3s ease;
+header {
+  padding: 0 1rem !important;
+  backdrop-filter: blur(24px) saturate(200%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 4px 12px rgba(0, 0, 0, 0.03),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  z-index: 100;
 }
 
 html[data-theme='dark'] .header {
-  background: rgba(29, 29, 31, 0.72) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(28, 28, 30, 0.75) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .tagline {
@@ -180,12 +187,12 @@ html[data-theme='dark'] .header {
 
 .social-icons a {
   padding: 0.5rem;
-  border-radius: 50%;
+  border-radius: 0.5rem;
   transition: background-color 0.2s ease;
 }
 
 .social-icons a:hover {
-  background-color: #f5f5f7;
+  background-color: #e5e5e5;
 }
 
 /* 侧边栏优化 - 参照 AlphabetIndex 风格 */

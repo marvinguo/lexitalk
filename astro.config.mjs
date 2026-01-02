@@ -46,6 +46,12 @@ export default defineConfig({
 				{ icon: 'x.com', label: 'X', href: 'https://x.com/MarshalXuan' },
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/nicejade/gpt-wordbook' },
 			],
+			customCss: [
+				'./src/assets/styles/tailwind.css',
+				'./src/assets/styles/homepage.css',
+				// 你的自定义 CSS 文件的相对路径
+				'./src/assets/styles/custom.css',
+			],
 			components: {
         // Override the default `MarkdownContent` component.
 				MarkdownContent: './src/components/MarkdownContent.astro',
@@ -63,11 +69,6 @@ export default defineConfig({
 					lang: 'zh-CN',
 				},
 			},
-			customCss: [
-				'./src/assets/styles/tailwind.css',
-				// 你的自定义 CSS 文件的相对路径
-				'./src/assets/styles/custom.css',
-			],
 			head: [
 				// DNS 预解析和预连接 - 性能优化
 				{

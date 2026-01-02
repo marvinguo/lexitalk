@@ -1,0 +1,62 @@
+:root {
+  --sl-color-text-accent: #0066cc !important;
+}
+
+/* --- 首页 (Homepage) 专项优化 --- */
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--sl-color-text-accent) 0%, #434343 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.audience-section {
+  width: 100%;
+  text-align: center;
+  margin: 6rem auto 4rem;
+  padding: 4rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  backdrop-filter: blur(12px);
+}
+
+:global([data-theme='light']) .audience-section {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.audience-card {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+:global([data-theme='light']) .audience-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.tech-tag {
+  font-size: 0.9rem;
+  color: var(--sl-color-gray-3);
+  background: var(--sl-color-bg-subtle);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--sl-color-hairline);
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  border-color: var(--sl-color-text-accent);
+  color: var(--sl-color-text-accent);
+}
