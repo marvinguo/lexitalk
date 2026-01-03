@@ -15,7 +15,7 @@ export default defineConfig({
 	site: 'https://word.lovejade.cn/',
 	// 构建优化配置
 	build: {
-		inlineStylesheets: 'auto', // 自动内联小型 CSS
+		inlineStylesheets: 'never', // 禁止内联 CSS，减少 HTML 体积
 		assets: '_astro', // 统一资源目录
 	},
 	// 压缩配置
@@ -48,13 +48,14 @@ export default defineConfig({
 			],
 			customCss: [
 				'./src/assets/styles/tailwind.css',
-				'./src/assets/styles/homepage.css',
+				// './src/assets/styles/homepage.css', // 移出全局，仅在首页引入
 				// 你的自定义 CSS 文件的相对路径
 				'./src/assets/styles/custom.css',
 			],
 			components: {
         // Override the default `MarkdownContent` component.
 				MarkdownContent: './src/components/MarkdownContent.astro',
+				Head: './src/components/CustomHead.astro',
       },
 			logo: {
 				src: './src/assets/images/logo.svg',
@@ -397,79 +398,6 @@ export default defineConfig({
             async: true,
 						crossorigin: 'anonymous',
 					},
-				},
-				// 结构化数据 - WebSite
-				{
-					tag: 'script',
-					attrs: {
-						type: 'application/ld+json',
-					},
-					content: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "WebSite",
-						"name": "GPT Wordbook",
-						"alternateName": "基于 GPT 生成的单词书",
-						"url": "https://word.lovejade.cn/",
-						"description": "基于 GPT 生成的深度解析，涵盖超过 8000+ 核心英语词汇。不仅提供精准的词义与例句，更深入挖掘词根词缀、文化背景、记忆技巧及趣味小故事。旨在通过 AI 帮助英语学习者构建逻辑化的词汇体系，让单词记忆不再是死记硬背。",
-						"inLanguage": "zh-CN",
-						"potentialAction": {
-							"@type": "SearchAction",
-							"target": {
-								"@type": "EntryPoint",
-								"urlTemplate": "https://word.lovejade.cn/?search={search_term_string}"
-							},
-							"query-input": "required name=search_term_string"
-						}
-					}),
-				},
-				// 结构化数据 - Organization
-				{
-					tag: 'script',
-					attrs: {
-						type: 'application/ld+json',
-					},
-					content: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "Person",
-						"name": "智析单词书",
-						"url": "https://word.lovejade.cn/",
-						"logo": "https://word.lovejade.cn/logo.png",
-						"image": "https://word.lovejade.cn/mockup.png",
-						"description": "基于 GPT 生成的深度解析，涵盖超过 8000+ 核心英语词汇。不仅提供精准的词义与例句，更深入挖掘词根词缀、文化背景、记忆技巧及趣味小故事。旨在通过 AI 帮助英语学习者构建逻辑化的词汇体系，让单词记忆不再是死记硬背。",
-						"sameAs": [
-							"https://mastodon.social/@nicejade",
-							"https://t.me/nicejade",
-							"https://www.youtube.com/@MarshalXuan",
-							"https://www.facebook.com/nice.jade.yang",
-							"https://x.com/MarshalXuan",
-							"https://github.com/nicejade"
-						]
-					}),
-				},
-				// 结构化数据 - BreadcrumbList
-				{
-					tag: 'script',
-					attrs: {
-						type: 'application/ld+json',
-					},
-					content: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "BreadcrumbList",
-						"itemListElement": [
-							{
-								"@type": "ListItem",
-								"position": 1,
-								"name": "首页",
-								"item": "https://word.lovejade.cn/"
-							},
-							{
-								"@type": "ListItem",
-								"position": 2,
-								"name": "关于",
-								"item": "https://word.lovejade.cn/about"
-							}
-						]
-					}),
 				},
 		],
 		sidebar: sidebarConfig,
