@@ -19,6 +19,7 @@
     "@astrojs/svelte": "7.1.0",
     "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/vite": "^4.1.13",
+    "@zumer/snapdom": "^2.0.1",
     "astro": "5.12.5",
     "starlight-links-validator": "^0.14.3",
     "starlight-theme-rapide": "^0.5.1",

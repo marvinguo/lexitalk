@@ -48,8 +48,6 @@ export default defineConfig({
 			],
 			customCss: [
 				'./src/assets/styles/tailwind.css',
-				// './src/assets/styles/homepage.css', // 移出全局，仅在首页引入
-				// 你的自定义 CSS 文件的相对路径
 				'./src/assets/styles/custom.css',
 			],
 			components: {

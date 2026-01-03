@@ -1,7 +1,38 @@
 ---
+import WordActions from './WordActions.svelte';
 import '@astrojs/starlight/style/markdown.css';
+
+const { url } = Astro;
+// 判定是否为单词详情页（排除索引页）
+const isWordPage = url.pathname.includes('/words/') && !url.pathname.includes('/words-index/');
 ---
 
 <div class="sl-markdown-content">
-  <slot />
+  <div class={isWordPage ? "main-pane" : ""}>
+    <slot />
+  </div>
+  {isWordPage && <WordActions client:load />}
 </div>
+
+<style>
+  /* 针对图片生成的样式优化 */
+  .main-pane.is-snapping {
+    padding: 4rem;
+    background-color: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 彻底解决组件被拷贝进图片的问题：当进入 snapping 状态时，通过兄弟选择器隐藏操作栏 */
+  .main-pane.is-snapping ~ .word-actions-wrapper {
+    display: none !important;
+  }
+
+  :global(html[data-theme='dark']) .main-pane.is-snapping {
+    background-color: #1c1c1e;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+</style>
