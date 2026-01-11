@@ -20,172 +20,24 @@ hero:
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 import AlphabetIndex from "../../components/AlphabetIndex.astro";
-import "../../assets/styles/homepage.css";
 
-<section class="hero-section not-prose">
-  <div class="hero-container">
-    <h2 class="hero-title">AI 赋能的深度词汇学习平台</h2>
-    <p class="hero-description">
-      精选 <strong class="hero-highlight">8000+</strong> 核心词汇，利用 GPT 模型深度解析词义、词根、词缀与文化内涵，从理解本质出发构建长期记忆。
+<section class="w-full text-center my-8 md:my-12 lg:my-16 px-4 not-prose">
+  <div class="max-w-[900px] mx-auto py-8 px-5 md:px-8 lg:px-10 rounded-[1.25rem] md:rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-300 [:root[data-theme='light']_&]:bg-black/[0.01] [:root[data-theme='light']_&]:border-black/[0.04] [:root[data-theme='light']_&]:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.05),0_4px_6px_-2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.5)]">
+    <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-[1.1] mb-6 tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-[var(--sl-color-text-accent)] to-[#434343] font-sans">AI 赋能的深度词汇学习平台</h2>
+    <p class="text-[clamp(1rem,3vw,1.4rem)] leading-relaxed text-[var(--sl-color-gray-3)] max-w-[700px] mx-auto font-normal tracking-tight font-sans">
+      精选 <strong class="text-[var(--sl-color-text-accent)] font-semibold text-[1.15em] inline-block transition-transform duration-200 hover:scale-105">8000+</strong> 核心词汇，利用 GPT 模型深度解析词义、词根、词缀与文化内涵，从理解本质出发构建长期记忆。
     </p>
   </div>
 </section>
 
-<style>{`
-  /* Hero Section - Mobile-first approach */
-  .hero-section {
-    width: 100%;
-    text-align: center;
-    margin: 2rem auto 3rem;
-    padding: 0 1rem;
-  }
-
-  .hero-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1.25rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.25rem;
-    backdrop-filter: blur(12px);
-    box-shadow: 
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06),
-      inset 0 1px 1px rgba(255, 255, 255, 0.05);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  [data-theme='light'] .hero-container {
-    background: rgba(0, 0, 0, 0.01);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 
-      0 10px 15px -3px rgba(0, 0, 0, 0.05),
-      0 4px 6px -2px rgba(0, 0, 0, 0.02),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  }
-
-  .hero-title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 0 0 1rem;
-    color: var(--sl-color-white);
-    letter-spacing: -0.02em;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-
-  .hero-description {
-    font-size: clamp(1rem, 3vw, 1.4rem);
-    line-height: 1.7;
-    color: var(--sl-color-gray-3);
-    max-width: 700px;
-    margin: 0 auto;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-
-  .hero-highlight {
-    color: var(--sl-color-text-accent);
-    font-weight: 600;
-    font-size: 1.15em;
-    display: inline-block;
-    transition: transform 0.2s ease;
-  }
-
-  .hero-highlight:hover {
-    transform: scale(1.05);
-  }
-
-  /* Tablet and up */
-  @media (min-width: 640px) {
-    .hero-section {
-      margin: 3rem auto 4rem;
-    }
-
-    .hero-container {
-      padding: 2.5rem 2rem;
-      border-radius: 1.5rem;
-    }
-
-    .hero-title {
-      margin-bottom: 1.25rem;
-    }
-  }
-
-  /* Desktop and up */
-  @media (min-width: 1024px) {
-    .hero-section {
-      margin: 4rem auto 6rem;
-    }
-
-    .hero-container {
-      padding: 3rem 2.5rem;
-    }
-
-    .hero-title {
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  /* Small mobile optimization */
-  @media (max-width: 380px) {
-    .hero-container {
-      padding: 1.5rem 1rem;
-      border-radius: 1rem;
-    }
-
-    .hero-title {
-      line-height: 1.35;
-    }
-
-    .hero-description {
-      line-height: 1.65;
-    }
-  }
-`}</style>
-
-<div class="index-container">
-  <h3 class="index-title">
+<div class="mb-12 md:mb-16 lg:mb-24 px-4">
+  <h3 class="text-center mb-6 md:mb-8 lg:mb-8 text-[clamp(1.25rem,4vw,1.5rem)] text-[var(--sl-color-gray-2)] font-semibold tracking-tight border-none">
     快速开始：按首字母索引
   </h3>
   <AlphabetIndex />
 </div>
 
-<style>{`
-  .index-container {
-    margin-bottom: 3rem;
-    padding: 0 1rem;
-  }
-
-  .index-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    border: none;
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
-    color: var(--sl-color-gray-2);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  @media (min-width: 640px) {
-    .index-container {
-      margin-bottom: 4rem;
-    }
-
-    .index-title {
-      margin-bottom: 2rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .index-container {
-      margin-bottom: 6rem;
-    }
-  }
-`}</style>
-
-<div class="features-wrapper">
+<div class="px-2 sm:px-4 mb-12 md:mb-16 lg:mb-20 [&_.card]:!p-10 [&_.card]:md:!p-8 [&_.card]:!mt-0 [&_.card]:transition-all [&_.card]:duration-300 [&_.card]:bg-white/[0.02] [&_.card]:!border-white/[0.08] [&_.card]:rounded-[1.25rem] [&_.card]:backdrop-blur-md [&_.card]:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.05)] [&_.card]:hover:-translate-y-0.5 [:root[data-theme='light']_&_.card]:!bg-black/[0.01] [:root[data-theme='light']_&_.card]:!border-black/[0.04] [:root[data-theme='light']_&_.card]:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.05),0_4px_6px_-2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.5)]">
   <CardGrid stagger>
     <Card title="🤖 AI 智能驱动" icon="rocket">
       基于 **GPT**
@@ -214,288 +66,25 @@ import "../../assets/styles/homepage.css";
   </CardGrid>
 </div>
 
-<style>{`
-  .features-wrapper {
-    padding: 0 0.5rem;
-    margin-bottom: 3rem;
-  }
-
-  @media (min-width: 640px) {
-    .features-wrapper {
-      padding: 0 1rem;
-      margin-bottom: 4rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .features-wrapper {
-      margin-bottom: 5rem;
-    }
-  }
-`}</style>
-
-<section class="audience-section">
-  <h3 class="audience-title">
+<section class="w-full text-center !my-16 md:my-20 lg:my-20 px-6 py-16 bg-white/[0.03] border border-white/[0.08] rounded-3xl backdrop-blur-md [:root[data-theme='light']_&]:bg-black/[0.02] [:root[data-theme='light']_&]:border-black/[0.05] mb-16 md:mb-16 lg:mb-20">
+  <h3 class="text-[clamp(1.5rem,5vw,2.25rem)] font-bold mb-8 md:mb-12 lg:mb-12 border-none text-white text-center tracking-tight">
     为进阶英语学习者打造
   </h3>
-  <div class="audience-grid">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 max-w-[1100px] mx-auto">
     {[
       { title: "🎓 考试备考者", desc: "考研、托福、雅思、GRE" },
       { title: "💼 职场人士", desc: "提升专业英语和职场应用能力" },
       { title: "🌟 英语爱好者", desc: "深度学习语言文化内涵" },
       { title: "👨‍🏫 教育工作者", desc: "获取优质的教学资源和素材" },
     ].map((item) => (
-      <div class="audience-card">
-        <strong class="audience-card-title">
+      <div class="bg-white/[0.02] border border-white/[0.08] rounded-2xl p-6 md:p-7 lg:p-8 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/15 hover:shadow-xl [:root[data-theme='light']_&]:bg-black/[0.01] [:root[data-theme='light']_&]:border-black/[0.04] hover:shadow-[0_8px_16px_-4px_rgba(0,0,0,0.2)] [:root[data-theme='light']_&:hover]:border-black/[0.12] [:root[data-theme='light']_&:hover]:shadow-[0_8px_16px_-4px_rgba(0,0,0,0.08)]">
+        <strong class="block mb-2.5 text-[var(--sl-color-accent)] text-lg md:text-xl font-semibold tracking-tight">
           {item.title}
         </strong>
-        <span class="audience-card-desc">
+        <span class="text-[clamp(0.9375rem,2.5vw,1rem)] text-[var(--sl-color-gray-3)] leading-relaxed block">
           {item.desc}
         </span>
       </div>
     ))}
   </div>
 </section>
-
-<style>{`
-  .audience-section {
-    width: 100%;
-    text-align: center;
-    margin: 4rem auto;
-    padding: 4rem 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 2rem;
-    backdrop-filter: blur(12px);
-  }
-
-  [data-theme='light'] .audience-section {
-    background: rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
-  .audience-title {
-    font-size: clamp(1.5rem, 5vw, 2.25rem);
-    font-weight: 700;
-    margin-bottom: 2rem;
-    border: none;
-    color: var(--sl-color-white);
-    text-align: center;
-    letter-spacing: -0.02em;
-  }
-
-  .audience-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .audience-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: left;
-  }
-
-  [data-theme='light'] .audience-card {
-    background: rgba(0, 0, 0, 0.01);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-  }
-
-  .audience-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
-  }
-
-  [data-theme='light'] .audience-card:hover {
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
-  }
-
-  .audience-card-title {
-    display: block;
-    margin-bottom: 0.625rem;
-    color: var(--sl-color-accent);
-    font-size: clamp(1.125rem, 3vw, 1.25rem);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  .audience-card-desc {
-    font-size: clamp(0.9375rem, 2.5vw, 1rem);
-    color: var(--sl-color-gray-3);
-    line-height: 1.6;
-    display: block;
-  }
-
-  /* Two columns for small tablets and up */
-  @media (min-width: 480px) {
-    .audience-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-  }
-
-  /* Four columns for tablets and up */
-  @media (min-width: 768px) {
-    .audience-section {
-      margin-bottom: 4rem;
-    }
-
-    .audience-title {
-      margin-bottom: 2.5rem;
-    }
-
-    .audience-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .audience-card {
-      padding: 1.75rem;
-    }
-  }
-
-  /* Full four columns for desktop */
-  @media (min-width: 1024px) {
-    .audience-section {
-      margin-bottom: 5rem;
-    }
-
-    .audience-title {
-      margin-bottom: 3rem;
-    }
-
-    .audience-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .audience-card {
-      padding: 2rem 1.5rem;
-    }
-
-    .audience-card-title {
-      margin-bottom: 0.75rem;
-    }
-  }
-`}</style>
-
-<section class="tech-section">
-  <p class="tech-description">
-    <strong class="tech-highlight">
-      🚀 现代化技术栈：
-    </strong>
-    基于 Astro + Starlight + Svelte + TailwindCSS 构建
-  </p>
-  <div class="tech-tags">
-    {["开源免费", "SEO 友好", "响应式设计", "高性能体验"].map((tag) => (
-      <span class="tech-tag">{tag}</span>
-    ))}
-  </div>
-</section>
-
-<style>{`
-  .tech-section {
-    width: 100%;
-    text-align: center;
-    padding: 0 1rem;
-    margin: 3rem auto 3rem;
-  }
-
-  .tech-description {
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    color: var(--sl-color-gray-2);
-    line-height: 1.7;
-    letter-spacing: -0.01em;
-    margin: 0 0 1.25rem;
-  }
-
-  .tech-highlight {
-    color: var(--sl-color-text-accent);
-    font-weight: 600;
-  }
-
-  .tech-tags {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .tech-tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
-    font-size: clamp(0.875rem, 2.5vw, 0.9375rem);
-    font-weight: 500;
-    color: var(--sl-color-gray-2);
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    letter-spacing: -0.01em;
-  }
-
-  [data-theme='light'] .tech-tag {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .tech-tag:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: var(--sl-color-white);
-  }
-
-  [data-theme='light'] .tech-tag:hover {
-    background: rgba(0, 0, 0, 0.06);
-    border-color: rgba(0, 0, 0, 0.15);
-  }
-
-  @media (min-width: 640px) {
-    .tech-section {
-      margin: 4rem auto 4rem;
-    }
-
-    .tech-description {
-      margin-bottom: 1.5rem;
-    }
-
-    .tech-tags {
-      gap: 1rem;
-    }
-
-    .tech-tag {
-      padding: 0.5rem 1.25rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .tech-tags {
-      gap: 1.5rem;
-    }
-
-    .tech-tag {
-      padding: 0.625rem 1.5rem;
-    }
-  }
-
-  /* Small mobile optimization */
-  @media (max-width: 380px) {
-    .tech-tags {
-      gap: 0.625rem;
-    }
-
-    .tech-tag {
-      padding: 0.4375rem 0.875rem;
-    }
-  }
-`}</style>
