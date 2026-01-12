@@ -20,6 +20,7 @@ hero:
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 import AlphabetIndex from "../../components/AlphabetIndex.astro";
+import Footer from '../../components/Footer.svelte';
 
 <section class="w-full text-center my-8 md:my-12 lg:my-16 px-4 not-prose">
   <div class="max-w-[900px] mx-auto py-8 px-5 md:px-8 lg:px-10 rounded-[1.25rem] md:rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-300 [:root[data-theme='light']_&]:bg-black/[0.01] [:root[data-theme='light']_&]:border-black/[0.04] [:root[data-theme='light']_&]:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.05),0_4px_6px_-2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.5)]">
@@ -88,3 +89,5 @@ import AlphabetIndex from "../../components/AlphabetIndex.astro";
     ))}
   </div>
 </section>
+
+<Footer />
