@@ -4,6 +4,9 @@
 </script>
 
 {#if synonyms.length > 0 || antonyms.length > 0}
+  <h3 class="font-bold uppercase mt-[1.5em]! text-[#1d1d1f]/60 [:root[data-theme='dark']_&]:text-[#f5f5f7]/60 px-1">
+    同义&反义
+  </h3>
   <div class="!my-10 flex flex-col gap-8 not-content">
     {#if synonyms.length > 0}
       <div class="flex flex-col gap-3">
