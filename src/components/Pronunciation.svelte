@@ -8,7 +8,9 @@
   let isPlayingUK = false;
   let isPlayingUS = false;
   let playbackToken = 0;
+  const MAX_PLAYBACK_COUNT = 2;
   let currentAudio: HTMLAudioElement | null = null;
+  let audioApiFailed = false;
 
   const resolveAudioWord = () => (audioWord || word).trim().toLowerCase();
   const resolveSpeechText = () => {
@@ -31,8 +33,10 @@
   const setPlayingState = (accent: 'uk' | 'us', isPlaying: boolean) => {
     if (accent === 'uk') {
       isPlayingUK = isPlaying;
+      isPlayingUS = false;
     } else {
       isPlayingUS = isPlaying;
+      isPlayingUK = false;
     }
   };
 
@@ -75,6 +79,11 @@
 
   const playAudioOnce = () =>
     new Promise<void>((resolve) => {
+      if (audioApiFailed) {
+        playWithSpeechSynthesisOnce('us').then(() => resolve());
+        return;
+      }
+
       const audio = new Audio(buildAudioUrl());
       audio.preload = 'none';
       currentAudio = audio;
@@ -95,6 +104,7 @@
       };
 
       const fallbackToSpeech = () => {
+        audioApiFailed = true;
         cleanup();
         playWithSpeechSynthesisOnce('us').then(() => finish());
       };
@@ -120,7 +130,7 @@
     const currentToken = playbackToken;
 
     setPlayingState(accent, true);
-    for (let i = 0; i < 3; i += 1) {
+    for (let i = 0; i < MAX_PLAYBACK_COUNT; i += 1) {
       if (currentToken !== playbackToken) break;
       await playOnce(accent);
       if (currentToken !== playbackToken) break;
