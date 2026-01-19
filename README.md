@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://word.lovejade.cn/" target="_blank">
+  <a href="https://www.lexitalkai.com/" target="_blank">
     <img width="120"
     src="https://github.com/nicejade//gpt-wordbook/blob/main/public/favicon.svg?raw=true">
   </a>
